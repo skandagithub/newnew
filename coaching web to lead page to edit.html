@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Coaching Management System</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	<style>
+	body {
+		font-family: Arial, Helvetica, sans-serif;
+	}
+
+	* {
+		box-sizing: border-box;
+	}
+
+	/* style the container */
+	.container {
+		position: relative;
+		border-radius: 5px;
+		background-color: #f2f2f2;
+		padding: 20px 0 30px 0;
+	}
+
+	/* style inputs and link buttons */
+	input, .btn, select, textarea {
+		width: 100%;
+		padding: 12px;
+		border: none;
+		border-radius: 4px;
+		margin: 5px 0;
+		opacity: 0.85;
+		display: inline-block;
+		font-size: 17px;
+		line-height: 20px;
+		text-decoration: none; /* remove underline from anchors */
+	}
+
+	input:hover, select:hover, .btn:hover {
+		opacity: 1;
+	}
+
+	/* add appropriate colors to fb, twitter and google buttons */
+	.fb {
+		width: 20%;
+		background-color: #3B5998;
+		color: white;
+		float: right;
+		position:relative;
+		top:0px;
+		bottom:0px;
+		right:5px;
+		
+	}
+	
+	.twitter {
+		width: 20%;
+		background-color: #55ACEE;
+		color: white;
+		float: right;
+		position:relative;
+		top:0px;
+		bottom:0px;
+		right:10px;
+		
+	}
+
+	.google {
+		width: 20%;
+		background-color: #dd4b39;
+		color: white;
+		float: right;
+		position:relative;
+		top:0px;
+		bottom:0px;
+		right:15px;
+	}
+
+	/* style the submit button */
+	input[type=submit] {
+		background-color: #4CAF50;
+		color: white;
+		cursor: pointer;
+	}
+
+	input[type=submit]:hover {
+		background-color: #45a049;
+	}
+
+	/* Two-column layout */
+	.col {
+		float: center;
+		width: 50%;
+		margin: auto;
+		padding: 0 50px;
+		margin-top: 6px;
+	}
+
+	/* Clear floats after the columns */
+	.row:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+
+	/* vertical line */
+	<!-- .vl {
+		position: absolute;
+		left: 50%;
+		transform: translate(-50%);
+		border: 2px solid #ddd;
+		height: 536px;
+	} -->
+
+	/* text inside the vertical line */
+	<!-- .vl-innertext {
+		position: absolute;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		background-color: #f1f1f1;
+		border: 1px solid #ccc;
+		border-radius: 50%;
+		padding: 8px 10px;
+	} -->
+
+	/* hide some text on medium and large screens */
+	.hide-md-lg {
+		display: none;
+	}
+
+	/* bottom container */
+	.bottom-container {
+		text-align: center;
+		background-color: #666;
+		border-radius: 0px 0px 4px 4px;
+	}
+
+	/* Responsive layout - when the screen is less than 650px wide, make the two columns stack on top of each other instead of next to each other */
+	@media screen and (max-width: 650px) {
+		.col {
+			width: 100%;
+			margin-top: 0;
+		}
+		/* hide the vertical line */
+		.vl {
+			display: none;
+		}
+		/* show the hidden text on small screens */
+		.hide-md-lg {
+			display: block;
+			text-align: center;
+		}
+	}
+
+	.example1 {
+	 height: 50px;	
+	 overflow: hidden;
+	 position: relative;
+	}
+	.example1 h3 {
+	 font-size: 2em;
+	 color: limegreen;
+	 position: absolute;
+	 width: 100%;
+	 height: 100%;
+	 margin: 0;
+	 line-height: 50px;
+	 text-align: center;
+	 /* Starting position */
+	 -moz-transform:translateX(100%);
+	 -webkit-transform:translateX(100%);	
+	 transform:translateX(100%);
+	 /* Apply animation to this element */	
+	 -moz-animation: example1 15s linear infinite;
+	 -webkit-animation: example1 15s linear infinite;
+	 animation: example1 15s linear infinite;
+	}
+	/* Move it (define the animation) */
+	@-moz-keyframes example1 {
+	 0%   { -moz-transform: translateX(100%); }
+	 100% { -moz-transform: translateX(-100%); }
+	}
+	@-webkit-keyframes example1 {
+	 0%   { -webkit-transform: translateX(100%); }
+	 100% { -webkit-transform: translateX(-100%); }
+	}
+	@keyframes example1 {
+	 0%   { 
+	 -moz-transform: translateX(100%); /* Firefox bug fix */
+	 -webkit-transform: translateX(100%); /* Firefox bug fix */
+	 transform: translateX(100%); 		
+	 }
+	 100% { 
+	 -moz-transform: translateX(-100%); /* Firefox bug fix */
+	 -webkit-transform: translateX(-100%); /* Firefox bug fix */
+	 transform: translateX(-100%); 
+	 }
+	}
+
+	img {
+	  border: 1px solid #ddd;
+	  border-radius: 4px;
+	  padding: 5px;
+	  height:400px;
+	  width: 600px;
+	}
+
+	.geek1{
+	font-size:70px;
+	font-family:monotype corsiva;
+	color:cyan;
+	}
+
+	body {
+		  <!-- /* background-image: linear-gradient(to top, #09203f 0%, #537895 100%); */ -->
+		 
+		 <!--   background-image:url(" https://indiadidac.org/wp-content/uploads/2019/03/education-1-1.jpg"); -->
+		   
+		
+		<!--  background-image:url("C:\\Users\\skanda.b\\Desktop\\bg1.png"); -->
+		 
+		
+		 
+		  background-image:url("https://66.media.tumblr.com/5497fc3925ffc3f670f181d272d663e5/tumblr_of1dhvtEQw1qdh4rqo1_1280.jpg");
+		  
+		  
+		 
+		  background-repeat:no-repeat;
+		  background-size:cover;    
+	} 
+	  
+	</style>
+	
+</head>
+
+<body>
+
+	<form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST" target="_blank" [] autocomplete="off">
+	<input type=hidden name="oid" value="00D2v000000MV0G">
+	<input type=hidden name="retURL" value="http://www.indusind.com/content/dam/indusind/desktop/nexxt/images/thank-you.png">
+	
+	<br>
+
+	
+	<br>
+	
+	<div class="example1">
+	<!-- <h3>seats filling fast!!!</h3> -->
+	</div>
+			
+	<div class="row">
+
+	<!-- <div class="vl">
+		<span class="vl-innertext">or</span>
+	</div> -->
+
+	<div class="col"> 
+	<!-- <font  color="black"><center><h2>register for Free demo Class</h2><center></font>	 -->
+	
+	<h1 class="text-primary"><center> <b>Register for <b class="text-danger">FREE </b><b>Class</center></h1>
+	
+	
+	
+
+	
+	<label for="salutation">Point of Contact Details </label><select  id="salutation" name="salutation" placeholder="salutation"><option value="Mr.">Mr.</option>
+<option value="Ms.">Ms.</option>
+<option value="Mrs.">Mrs.</option>
+<option value="Dr.">Dr.</option>
+<option value="Prof.">Prof.</option>
+</select><br>
+
+<label for="first_name">.</label><input  id="first_name" maxlength="40" name="first_name" size="20" type="text" placeholder="First Name"/><br>
+
+<label for="last_name"></label><input  id="last_name" maxlength="80" name="last_name" size="20" type="text" placeholder="Last Name"/><br>
+
+<label for="email"></label><input  id="email" maxlength="80" name="email" pattern="^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$"size="20" type="text" placeholder="Email" /><br>
+
+<label for="phone"></label><input  id="phone" maxlength="40" name="phone" size="20" type="text" placeholder="Phone" /><br>
+
+<label for="mobile"></label><input  id="mobile" maxlength="40" name="mobile" size="20" type="text" placeholder="Mobile" /><br>
+
+	Institution Details:<input  id="00N2v00000UTxfJ" maxlength="18" name="00N2v00000UTxfJ" size="20" type="text" placeholder="Institution Name" /><br>
+
+<label for="url"></label><input  id="url" maxlength="80" name="url" size="20" type="text"  placeholder="Institution Website"/><br>
+
+<input type="submit" value="submit">
+
+
+
+
+	
+	
+	</div>
+
+	
+	</div>
+	</form>
+
+</body>
+
+</html>
